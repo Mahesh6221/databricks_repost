@@ -6,20 +6,21 @@ Setup Instructions
 
 Prerequisites
 
-Apache Spark (Databricks or local PySpark environment).
+1. Apache Spark (Databricks or local PySpark environment).
 
-Access to /Volumes/workspace/default/ for reading and writing datasets.
+2. Access to /Volumes/workspace/default/ for reading and writing datasets.
 
-Python 3.x environment with required Spark libraries.
+3. Python 3.x environment with required Spark libraries.
 
-Input Data
-Place the raw CSV files into the bronze layer:
+Input Data:
+
+1. Place the raw CSV files into the bronze layer:
 
 /Volumes/workspace/default/bronze/customers.csv
 
 /Volumes/workspace/default/bronze/claims.csv
 
-Execution
+2. Execution
 Run the PySpark code step by step in a Databricks notebook (or any Spark-enabled environment).
 
 Steps Followed
@@ -29,13 +30,12 @@ Loaded customers and claims datasets from the Bronze layer using spark.read.csv.
 
 2. Data Quality & Integrity
 
-Null Handling:
-
+i. Null Handling:
 Dropped rows with nulls.
 
 Filled missing values with defaults (Unknown, 0).
 
-Deduplication:
+ii. Deduplication:
 
 Identified duplicates using groupBy(...).count().
 
@@ -43,15 +43,15 @@ Removed duplicates in claims based on (customer_id, policy_id, claim_date, hospi
 
 Schema Validation:
 
-Ensured numeric fields (customer_id, claim_amount) were cast to appropriate types.
+iii. Ensured numeric fields (customer_id, claim_amount) were cast to appropriate types.
 
-Referential Integrity:
+iv. Referential Integrity:
 
-Ensured claims were only linked to valid customers.
+- Ensured claims were only linked to valid customers.
 
-Isolated invalid claims for further inspection.
+- Isolated invalid claims for further inspection.
 
-Stored cleaned data into the Silver layer (/Volumes/workspace/default/Silver_Dataset).
+- Stored cleaned data into the Silver layer (/Volumes/workspace/default/Silver_Dataset).
 
 3. Fraud Detection Rules
 
@@ -63,7 +63,7 @@ Rule 2: Suspicious Claim → More than 3 claims in 30 days.
 
 Rule 3: Suspicious Claim → Claims filed in different states within the same week.
 
-Each claim was assigned a fraud status:
+- Each claim was assigned a fraud status:
 
 Invalid
 
