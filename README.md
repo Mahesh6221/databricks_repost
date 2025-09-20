@@ -66,9 +66,23 @@ i. Each claim was assigned a fraud status:
 - Suspicious
 - Valid
 
+4. Datasets
+
+I. Silver Dataset
+
+Cleaned claims data after quality and integrity checks.
+Used as a standardized source for enrichment and analysis.
+
+II. Gold Dataset
+
+Enriched data with fraud status:
+valid → No fraud detected
+suspicious → Needs review
+
+invalid → Fraud confirmed
 Results stored in the Gold layer (/Volumes/workspace/default/Gold_Dataset).
 
-4. Analytical SQL Queries:
+5. Analytical SQL Queries:
 
 Ran business-driven insights on Gold data:
 
