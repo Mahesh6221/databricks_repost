@@ -50,7 +50,7 @@ iv. Referential Integrity:
 
 - Stored cleaned data into the Silver layer (/Volumes/workspace/default/Silver_Dataset).
 
-3. Fraud Detection Rules
+3. Fraud Detection Rules:
 
 Applied business rules on claims data:
 
