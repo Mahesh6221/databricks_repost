@@ -75,11 +75,11 @@ Used as a standardized source for enrichment and analysis.
 
 II. Gold Dataset
 
-Enriched data with fraud status:
-valid → No fraud detected
-suspicious → Needs review
+- Enriched data with fraud status:
+- valid → No fraud detected
+- suspicious → Needs review
 
-invalid → Fraud confirmed
+- invalid → Fraud confirmed
 Results stored in the Gold layer (/Volumes/workspace/default/Gold_Dataset).
 
 5. Analytical SQL Queries:
